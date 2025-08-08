@@ -1,5 +1,5 @@
 
-name: Playwright Tests with Allure Reporting
+name: AutoTrigger Tests
 on:
   push:
     branches: [ main, master ]
