@@ -1,1 +1,53 @@
 
+name: Playwright Tests with Allure Reporting
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    name: Run Playwright Tests
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 18
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: |
+        npm ci
+        npx playwright install --with-deps
+        
+    - name: Run Playwright tests with Allure reporter
+      run: npm run allure:test
+      continue-on-error: true
+    
+      
+    - name: Generate Allure Report
+      uses: simple-elf/allure-report-action@master
+      if: always()
+      with:
+        allure_results: allure-results
+        allure_history: allure-history
+        keep_reports: 20
+    
+     
+    - name: Upload Playwright Test Results
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: allure-playwright-report
+        path: |
+          allure-report/
+        retention-days: 30
+
+ 
+
