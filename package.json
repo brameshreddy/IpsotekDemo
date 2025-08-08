@@ -1,0 +1,41 @@
+{
+  "name": "playwright-demo-tests",
+  "version": "1.0.0",
+  "description": "Ipsotek Demo test using Playwright with TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:report": "playwright show-report",
+    "test:ui": "playwright test --ui",
+    "clean": "rm -rf dist && rm -rf test-results && rm -rf playwright-report && rm -rf allure-results && rm -rf allure-report",
+    "install:browsers": "playwright install",
+    "lint": "echo 'Linting not configured yet'",
+    "allure:generate": "allure generate allure-results -o allure-report --clean",
+    "allure:open": "allure open allure-report",
+    "allure:test": "playwright test --reporter=line,allure-playwright",
+    "test:allure": "npm run clean && npm run allure:test && npm run allure:generate && npm run allure:open"
+  },
+  "keywords": [
+    "playwright",
+    "typescript",
+    "e2e",
+    "automation",
+    "testing",
+    "page-object-model"
+  ],
+  "author": "Ramesh Reddy",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.54.1",
+    "@types/node": "^24.0.13",
+    "allure-commandline": "^2.24.1",
+    "allure-playwright": "^2.9.2",
+    "dotenv": "^17.2.0",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@playwright/mcp": "^0.0.30"
+  }
+}

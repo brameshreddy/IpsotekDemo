@@ -1,0 +1,38 @@
+[
+  {
+    "path": "/process-data",
+    "data": {
+      "eventId": "1",
+      "eventType": "user_action",
+      "eventTimestamp": "2025-08-08T09:02:13.437Z",
+      "userData": {
+        "action": "login",
+        "userId": "user123"
+      }
+    }
+  },
+  {
+    "path": "/process-data",
+    "data": {
+      "eventId": "2",
+      "eventType": "user_action",
+      "eventTimestamp": "2025-08-08T09:02:13.437Z",
+      "userData": {
+        "action": "login",
+        "userId": "user123"
+      }
+    }
+  },
+  {
+    "path": "/process-data",
+    "data": {
+      "eventId": "3",
+      "eventType": "user_action",
+      "eventTimestamp": "2025-08-08T09:02:13.437Z",
+      "userData": {
+        "action": "login",
+        "userId": "user123"
+      }
+    }
+  }
+]

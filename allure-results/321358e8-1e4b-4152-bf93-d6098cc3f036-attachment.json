@@ -1,0 +1,14 @@
+[
+  {
+    "path": "/process-data",
+    "data": {
+      "eventId": "12345",
+      "eventType": "user_action",
+      "eventTimestamp": "2025-08-07T16:22:41.546Z",
+      "userData": {
+        "action": "login",
+        "userId": "user123"
+      }
+    }
+  }
+]
